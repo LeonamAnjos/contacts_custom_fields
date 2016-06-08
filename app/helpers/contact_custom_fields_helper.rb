@@ -1,0 +1,2 @@
+module ContactCustomFieldsHelper
+end

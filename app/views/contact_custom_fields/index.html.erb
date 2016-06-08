@@ -1,0 +1,41 @@
+<h2>Contact Custom Fields</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Field type</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contact_custom_fields.each do |contact_custom_field| %>
+      <tr>
+        <td><%= contact_custom_field.name %></td>
+        <td><%= contact_custom_field.field_type %></td>
+        <td>
+          <%= link_to contact_custom_field, class: "btn btn-default btn-xs", title: 'Show' do %>
+            <span class="glyphicon glyphicon-check"></span>
+          <% end %>
+          
+          <%= link_to edit_contact_custom_field_path(contact_custom_field), class: "btn btn-default btn-xs", title: 'Edit' do %>
+            <span class="glyphicon glyphicon-edit"></span>
+          <% end %>
+          
+          <%= link_to contact_custom_field, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs", title: 'Delete' do %>
+            <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to new_contact_custom_field_path, class: "btn btn-default" do %>
+  <span class="glyphicon glyphicon-plus"></span>
+  <span >New Contact custom field</span>
+<% end %>
+

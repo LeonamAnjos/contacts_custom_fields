@@ -1,0 +1,26 @@
+<%= form_for(@contact_custom_field) do |f| %>
+  <% if @contact_custom_field.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact_custom_field.errors.count, "error") %> prohibited this contact_custom_field from being saved:</h2>
+
+      <ul>
+      <% @contact_custom_field.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= f.select :field_type, %w[text_field text_area check_box] %>
+  </div>
+  <div>
+    <%= f.submit 'Save', class: "btn btn-primary" %>
+  </div>
+<% end %>

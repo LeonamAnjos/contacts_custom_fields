@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @contact_custom_field.name %>
+</p>
+
+<p>
+  <strong>Field type:</strong>
+  <%= @contact_custom_field.field_type %>
+</p>
+
+<%= link_to 'Edit', edit_contact_custom_field_path(@contact_custom_field) %> |
+<%= link_to 'Back', contact_custom_fields_path %>
