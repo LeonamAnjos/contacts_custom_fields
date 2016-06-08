@@ -27,6 +27,7 @@ gem 'devise', '~> 4.1' # Flexible authentication solution for Rails with Warden
 
 group :production do
   gem 'pg', '~> 0.18.4'
+  gem 'rails_12factor', '~> 0.0.3'
 end
 
 group :development, :test do
