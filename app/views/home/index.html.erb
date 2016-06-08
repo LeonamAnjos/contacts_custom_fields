@@ -1,9 +1,15 @@
-<h1>Welcome <%= current_user.email %></h1>
+<section>
+    <% unless user_signed_in?  %>
+      <%= link_to "Log in", new_user_session_path %><br />
+    <% else %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %><br />
+    <% end %>
+</section>
+
+
+<h1>Welcome!</h1>
 <p>Rails version: <%= Rails.version %></p>
 
-<section>
-    <p><%= link_to "Log Out", destroy_user_session_path, method: :delete %></p>
-</section>
 
 
 
