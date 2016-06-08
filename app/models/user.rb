@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :contacts         
+  
+  validates :name, presence: true, length: { maximum: 30 }
+  
 end
