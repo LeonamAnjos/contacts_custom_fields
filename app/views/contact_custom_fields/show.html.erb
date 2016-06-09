@@ -13,6 +13,12 @@
   <%= @contact_custom_field.field_name %>
 </p>
 
+<p>
+  <strong>ComboBox options:</strong>
+  <%= @contact_custom_field.combobox_options %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_contact_custom_field_path(@contact_custom_field) %> |
 <%= link_to 'Back', contact_custom_fields_path %>

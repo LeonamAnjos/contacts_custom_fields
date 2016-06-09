@@ -1,0 +1,7 @@
+<div class="form-group">
+    <% selected_option = @contact.custom_fields && @contact.custom_fields[field.field_name] %>
+    <% options = options_for_select(field.combobox_options.split(/\r?\n/), selected_option) %>
+    
+    <%= f.label field.field_name %><br>
+    <%= f.select(field.field_name, options) %>
+</div>

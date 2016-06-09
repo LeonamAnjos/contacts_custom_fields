@@ -52,6 +52,6 @@ class ContactCustomFieldsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_custom_field_params
-      params.require(:contact_custom_field).permit(:name, :field_type, :user_id)
+      params.require(:contact_custom_field).permit(:name, :field_type, :user_id, :combobox_options)
     end
 end
