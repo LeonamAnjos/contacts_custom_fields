@@ -8,5 +8,13 @@
   <%= @contact.email %>
 </p>
 
+<% @contact_custom_fields.each do |field| %>
+  <p>
+    <strong><%="#{field.name}:"%></strong>
+    <%= @contact.custom_fields[field.field_name] %>
+  </p>
+<% end %>
+
+
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>
