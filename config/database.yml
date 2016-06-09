@@ -6,7 +6,6 @@ default: &default
   encoding: utf8
   pool: 5
 
-
 development:
   <<: *default
   database: contacts-dev
@@ -19,4 +18,4 @@ production:
   adapter: postgresql
   host: localhost
   username: user
-  database: contacts-prod
+  database: app-dev
