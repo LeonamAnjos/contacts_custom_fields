@@ -8,6 +8,7 @@ class Contact < ActiveRecord::Base
                         length: { maximum: 255 }, 
                         format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
                         uniqueness: true
-    
+
+    scope :of_user, lambda { |user| where(user_id: user.id) }    
     
 end

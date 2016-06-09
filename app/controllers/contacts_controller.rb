@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contacts = Contact.where(user: current_user)
+    @contacts = Contact.of_user current_user
   end
 
   def show

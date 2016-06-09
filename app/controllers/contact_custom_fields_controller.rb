@@ -2,14 +2,14 @@ class ContactCustomFieldsController < ApplicationController
   before_action :set_contact_custom_field, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contact_custom_fields = ContactCustomField.all
+    @contact_custom_fields = ContactCustomField.of_user current_user
   end
 
   def show
   end
 
   def new
-    @contact_custom_field = ContactCustomField.new
+    @contact_custom_field = ContactCustomField.new(user_id: current_user.id)
   end
 
   def edit
