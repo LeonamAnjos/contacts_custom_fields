@@ -24,13 +24,13 @@ gem 'devise', '~> 4.1' # Flexible authentication solution for Rails with Warden
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'pg', '~> 0.18.4'
+
 group :production do
-  gem 'pg', '~> 0.18.4'
   gem 'rails_12factor', '~> 0.0.3'
 end
 
 group :development, :test do
-  gem 'sqlite3' # Use sqlite3 as the database for Active Record
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'better_errors', '~> 2.1' # Provides a better error page for Rails and other Rack apps. 
 end
