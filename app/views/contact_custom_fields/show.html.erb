@@ -8,5 +8,11 @@
   <%= @contact_custom_field.field_type %>
 </p>
 
+<p>
+  <strong>Field name:</strong>
+  <%= @contact_custom_field.field_name %>
+</p>
+
+
 <%= link_to 'Edit', edit_contact_custom_field_path(@contact_custom_field) %> |
 <%= link_to 'Back', contact_custom_fields_path %>

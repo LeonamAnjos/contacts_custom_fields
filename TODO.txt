@@ -1,0 +1,2 @@
+- Validate uniqueness field_name per user
+- Validate field_name without special chars

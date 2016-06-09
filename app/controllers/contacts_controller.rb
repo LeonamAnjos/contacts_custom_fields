@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  before_action :get_custom_fields, only: [:show, :edit, :new]
 
   def index
     @contacts = Contact.of_user current_user
@@ -16,6 +17,7 @@ class ContactsController < ApplicationController
   end
 
   def create
+    puts contact_params
     @contact = Contact.new(contact_params)
     puts @contact.inspect
 
@@ -29,6 +31,7 @@ class ContactsController < ApplicationController
   end
 
   def update
+    puts contact_params
     respond_to do |format|
       if @contact.update(contact_params)
         format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
@@ -53,6 +56,12 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:name, :email, :user_id)
+      puts '******'
+      params.require(:contact).permit(:name, :email, :user_id, {custom_fields: [:mother_name, :summary ] })
+    end
+    
+    # Build forms with custom fields
+    def get_custom_fields
+      @custom_fields = ContactCustomField.of_user current_user
     end
 end

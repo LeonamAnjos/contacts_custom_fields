@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609030956) do
+ActiveRecord::Schema.define(version: 20160609154119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,9 @@ ActiveRecord::Schema.define(version: 20160609030956) do
     t.string   "name"
     t.string   "field_type"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "field_name", default: "", null: false
   end
 
   add_index "contact_custom_fields", ["user_id"], name: "index_contact_custom_fields_on_user_id", using: :btree
