@@ -1,3 +1,6 @@
-one: {
-  email: 'one@resultadosdigitais.com.br'    
-}
+jhon: 
+  name: 'Jhon'
+  email: 'jhon@resultadosdigitais.com.br'
+frank: 
+  name: 'Frank'
+  email: 'frank@resultadosdigitais.com.br'

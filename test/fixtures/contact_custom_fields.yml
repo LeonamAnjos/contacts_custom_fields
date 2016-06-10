@@ -1,11 +1,22 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+text_field: 
+  name: My text field
+  field_name: my_text_field
+  field_type: text_field
+  user_id: jhon.id
 
-one:
-  name: MyString
-  field_type: MyString
-  user_id: 
+text_area: 
+  name: My text area
+  field_name: my_text_area
+  field_type: text_area
+  user_id: jhon.id
 
-two:
-  name: MyString
-  field_type: MyString
-  user_id: 
+combo_box: 
+  name: My combo box
+  field_name: my_combo_box
+  field_type: combo_box
+  combobox_options:
+    Option 01
+    Option 02
+  user_id: frank.id
+  
+
