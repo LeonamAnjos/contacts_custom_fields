@@ -36,6 +36,11 @@ $ sudo apt-get update
 $ sudo apt-get install postgresql-contrib-9.3
 ```
 
+You can use rake to run the tests:
+```sh
+$ rake test
+```
+
 [GitHub]: <https://github.com/LeonamAnjos/contacts_custom_fields>
 [Devise]: <https://github.com/plataformatec/devise>
 [hstore]: <https://www.postgresql.org/docs/9.1/static/hstore.html>
