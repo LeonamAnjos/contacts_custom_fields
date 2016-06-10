@@ -6,7 +6,7 @@ You can check the application running at https://leonam-resultadosdigitais.herok
 
 ### Installation
 
-__Contacts Custom Fields__ requires PostgreSQL, since __hstore__ is used to keep custom fields data. You can find how to install PostgreSQL [here](https://www.postgresql.org/download/linux/ubuntu/).
+The application requires PostgreSQL, since __hstore__ is used to keep custom fields data. You can find how to install PostgreSQL [here](https://www.postgresql.org/download/linux/ubuntu/).
 
 You can download from [GitHub] or clone it. 
 ```sh
