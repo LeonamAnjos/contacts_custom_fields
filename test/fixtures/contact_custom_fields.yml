@@ -2,13 +2,13 @@ text_field:
   name: My text field
   field_name: my_text_field
   field_type: text_field
-  user_id: jhon.id
+  user: jhon
 
 text_area: 
   name: My text area
   field_name: my_text_area
   field_type: text_area
-  user_id: jhon.id
+  user: jhon
 
 combo_box: 
   name: My combo box
@@ -17,6 +17,6 @@ combo_box:
   combobox_options:
     Option 01
     Option 02
-  user_id: frank.id
+  user: frank
   
 

@@ -54,18 +54,8 @@ class ContactCustomFieldTest < ActiveSupport::TestCase
   end
 
   test 'should return custom fields of given user' do
-    jhon = users(:jhon)
-    frank = users(:frank)
-    
-    @text_field.user_id = @text_area.user_id = jhon.id
-    @combo_box.user_id = frank.id
-    
-    @text_field.save
-    @text_area.save
-    @combo_box.save
-  
-    assert_equal 2, ContactCustomField.of_user(jhon).size
-    assert_equal 1, ContactCustomField.of_user(frank).size
+    assert_equal 2, ContactCustomField.of_user(users :jhon).size
+    assert_equal 1, ContactCustomField.of_user(users :frank).size
   end
 
 end
