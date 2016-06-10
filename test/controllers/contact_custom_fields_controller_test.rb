@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class ContactCustomFieldsControllerTest < ActionController::TestCase
+  fixtures :users, :contact_custom_fields
+  
   setup do
-    @contact_custom_field = contact_custom_fields(:one)
+    @user = users :jhon
+    @contact_custom_field = contact_custom_fields(:text_field)
   end
 
   test "should get index" do
