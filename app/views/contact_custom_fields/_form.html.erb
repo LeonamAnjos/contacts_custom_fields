@@ -1,4 +1,6 @@
-<%= form_for(@contact_custom_field) do |f| %>
+<%= javascript_include_tag 'contact_custom_fields', 'data-turbolinks-track' => true %>
+
+<%= form_for(@contact_custom_field, html: {class: "form-horizontal"}) do |f| %>
   <% if @contact_custom_field.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contact_custom_field.errors.count, "error") %> prohibited this contact_custom_field from being saved:</h2>
@@ -14,8 +16,10 @@
   <%= f.hidden_field :user_id %>
 
   <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
   </div>
 
   <div class="form-group">
@@ -27,16 +31,22 @@
         ['Combo Box', 'combo_box']
       ], selected_option) %>
 
-    <%= f.label :field_type %><br>
-    <%= f.select :field_type, options %>
+    <%= f.label :field_type, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+      <%= f.select :field_type, options, {},  class: "form-control", onchange: 'setComboBoxOptionsVisibility(this.value)' %>
+    </div>
+  </div>
+  
+  <div id="combobox_options_group" class="form-group">
+    <%= f.label :combobox_options, 'ComboBox options', class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+      <%= f.text_area :combobox_options, rows: 5, class: "form-control" %>
+    </div>
   </div>
   
   <div class="form-group">
-    <%= f.label :combobox_options, 'ComboBox options' %><br>
-    <%= f.text_area :combobox_options, rows: 5 %>
-  </div>
-  
-  <div>
-    <%= f.submit 'Save', class: "btn btn-primary" %>
+    <div class="col-sm-offset-2 col-sm-6">
+      <%= f.submit 'Save', class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
