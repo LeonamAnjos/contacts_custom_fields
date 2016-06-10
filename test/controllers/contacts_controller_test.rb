@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class ContactsControllerTest < ActionController::TestCase
-  include Devise::TestHelpers
-  
   fixtures :users, :contacts
   
   setup do
