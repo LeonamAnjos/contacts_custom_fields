@@ -6,12 +6,22 @@ class ContactCustomFieldsControllerTest < ActionController::TestCase
   setup do
     @user = users :jhon
     @contact_custom_field = contact_custom_fields(:text_field)
+    
+    sign_in @user
   end
 
   test "should get index" do
     get :index
     assert_response :success
     assert_not_nil assigns(:contact_custom_fields)
+  end
+  
+  test "should not get index if not signed in" do
+    sign_out @user
+
+    get :index
+    assert_response :redirect
+    assert_redirected_to controller: 'devise/sessions', action: 'new'
   end
 
   test "should get new" do

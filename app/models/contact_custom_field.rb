@@ -1,9 +1,7 @@
 class ContactCustomField < ActiveRecord::Base
   belongs_to :user
-  before_save do 
-    self.field_name = name.strip.gsub(' ', '_').downcase 
-    self.combobox_options = '' unless combo_box?
-  end 
+  before_validation { self.field_name = name.strip.gsub(' ', '_').downcase  }
+  before_save { self.combobox_options = '' unless combo_box? }
   
   validates :name, presence: true
   validates :field_type, presence: true, inclusion: { in: %w(text_field text_area combo_box) }
